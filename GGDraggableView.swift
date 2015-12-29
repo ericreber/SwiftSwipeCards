@@ -65,7 +65,7 @@ class GGDraggableView: UIView {
         
             
         default:
-            println("error default statement")
+            print("error default statement")
             
         }
     }
