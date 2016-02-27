@@ -13,10 +13,6 @@ class GGDraggableView: UIView {
     var panGestureRecognizer : UIPanGestureRecognizer!
     var originalPoint:CGPoint!
     
-    override init(){
-        super.init()
-    }
-    
     override init(frame: CGRect){
         super.init(frame : frame)
         self.backgroundColor = UIColor.greenColor()
@@ -28,7 +24,7 @@ class GGDraggableView: UIView {
         self.loadImageAndStyle()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
@@ -43,7 +39,9 @@ class GGDraggableView: UIView {
     func dragged(gestureRecognizer: UIPanGestureRecognizer) {
   
         let xDistance:CGFloat = gestureRecognizer.translationInView(self).x
-        let yDistance:CGFloat = gestureRecognizer.translationInView(self).y
+        let yDistance:CGFloat = 0.00
+        //If you want the card to move on the y axys too :
+        //let yDistance:CGFloat = gestureRecognizer.translationInView(self).y
         
         switch(gestureRecognizer.state){
         case UIGestureRecognizerState.Began:
@@ -65,7 +63,7 @@ class GGDraggableView: UIView {
         
             
         default:
-            print("error default statement")
+            print("error default statement", terminator: "")
             
         }
     }

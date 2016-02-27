@@ -12,10 +12,10 @@ class GGView: UIView {
 
     var draggableView:GGDraggableView!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        println("InitGGView")
+        print("InitGGView")
         self.backgroundColor = UIColor.whiteColor()
         self.loadDraggableCustomView()
     }
